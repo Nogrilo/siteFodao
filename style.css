@@ -1,0 +1,508 @@
+/* ESTILO GERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+
+html{
+    scroll-behavior: smooth; /* Deixar o scroll suave na página inteira */
+}
+
+body{
+    background: black;
+    height: 100vh;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+.btn-contato button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: orange;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+h2.titulo{
+    color: white;
+    font-size: 34px;
+    text-align: center;
+}
+
+h2.titulo span{
+    color: orange;
+}
+
+.btn-social button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: orange;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+button:hover, form .btn-enviar input:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 166, 0, 0.514);
+}
+
+/* PERSONALIZAÇÃO DA SCROLLBAR */
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: orange;
+    border-radius: 50px;
+}
+
+/* FIM DA PERSONALIZAÇÃO DA SCROLLBAR */
+
+/* FIM DO ESTILO GERAL */
+
+/* ESTILO DO CABECALHO */
+header{
+    padding: 40px 4%;
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    color: rgb(99, 98, 98);
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+/* FIM ESTILO DO CABECALHO */
+
+/* PARA A FONTE TROCAR E DAR ZOOM AO PASSAR O MOUSE */
+header a:hover{
+    color: #fff;
+    transform: scale(1.05);
+}
+
+header nav ul{
+    list-style-type: none;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site{
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1{
+    color: #fff;
+    font-size: 38px;
+    line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span{
+    color: #ffa500;
+}
+
+.topo-do-site .txt-topo-site p{
+    color: #fff;
+    margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site img{
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+    border-radius: 30px; /* Arredondar bordas */
+    box-shadow: 0 0 20px orange;
+}
+
+/* ANIMAÇÃO DA FOTO */
+@keyframes flutuar{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especialidades{
+    padding: 40px 4%;
+}
+
+section.especialidades .flex{
+    gap: 60px;
+}
+
+.especialidades .especialidades-box{
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.especialidades .especialidades-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.329);
+}
+
+.especialidades .especialidades-box i{
+    font-size: 70px;
+    color: orange;
+}
+
+.especialidades .especialidades-box h3{
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ESTILO DO RODAPÉ */
+
+footer{
+    padding: 10px 4%;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.055);
+}
+
+footer .flex{
+    justify-content: space-between;
+}
+
+footer .line-footer{
+    padding: 40px 0;
+}
+
+.borda{
+    border-top: 2px solid orange;
+}
+
+footer .line-footer p i{
+    color: orange;
+    font-size: 22px;
+}
+
+footer .line-footer p a{
+    color: white;
+}
+
+/* FIM DO RODAPÉ */
+
+/* SLIDER E FOTOS */
+
+section.fotos {
+    padding: 80px 4%; /* Espaço */
+    margin-bottom: 15px 15; /* Espaço em baixo */
+}
+
+.slider-wrapper {
+    position: relative;
+    max-width: 40rem;
+    margin: 0 auto; /* Centralizar o slider no meio da tela */
+}
+
+
+.slider {
+    margin-top: 40px; /* Espaço topo */
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 30px;  /* Arredondar bordas */
+    -ms-overflow-style: none; /* Esconder barra no Edge */
+	scrollbar-width: none; /* Esconder barra no Firefox */
+    box-shadow: 0 0 5px orange; /* Adicionar borda no slider */
+}
+
+.slider::-webkit-scrollbar{ 
+    display: none; /* Tirar o slider do Chrome, Safari e Opera -> */
+} 
+
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem; /* Espaço entre os botoes */
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a{
+    width: 1rem; /* Tamanho botao */
+    height: 1rem; /* Tamanho botao */
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.25;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover{
+    transition: .2s;
+    background-color: orange;
+    transform: scale(2.05);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.329);
+    opacity: 1;
+}
+
+/* FIM DO SLIDER */
+
+/* FORMULÁRIO */
+
+section.formulario{
+    padding: 80px 4%;
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+form input, form textarea{
+    width: 100%;
+    background-color: rgb(80, 79, 79);
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+}
+
+form input::placeholder, form textarea::placeholder{
+    color: white;
+}
+
+form textarea{
+    resize: none;
+    max-height: 200px;
+}
+
+form .btn-enviar{
+    margin-top: 20px;
+    text-align: center;
+}
+
+form .btn-enviar input{
+    width: 120px;
+    background-color: #ffa500;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* FIM DO FORMULÁRIO */
+
+/* SITE RESPONSIVO */
+
+@media screen and (max-width: 1020px) {
+    /* GERAL */
+
+    .flex{
+        flex-direction: column;
+    }
+
+    h2.titulo{
+        font-size: 34px;
+        line-height: 30px;
+    }
+
+    /* INVERTER A FOTO DO GRAGÃO */
+
+    .topo-do-site .flex{
+        flex-direction: column-reverse;
+    }
+
+    /* CABEÇALHO */
+
+    .logo{
+        margin: 0 auto;
+    }
+
+    .menu-desktop, .btn-contato{
+        display: none;
+    }
+
+    /* TOPO DO SITE */
+
+    section.topo-do-site .flex{
+        gap: 40px;
+    }
+
+    section.topo-do-site{
+        padding: 20px 8%;
+    }
+
+    .topo-do-site h1{
+        font-size: 30px;
+    }
+
+    .topo-do-site .img-topo-site img{
+        width: 100%;
+    }
+
+    /* ESPECIALIDADES */
+
+    section.especialidades{
+        padding: 40px 8%;
+    }
+
+    /* RODAPÉ */
+
+    footer .flex{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer .line-footer{
+        text-align: center;
+    }
+}
+
+/* FIM DO SITE RESPONSIVO */
+
+/* CARD */
+
+.wrapper {
+    box-sizing: border-box;
+    color: #fff;
+    
+    width: 100%;
+    height: 10; /* Ajustar altura do Card */
+    display: flex;
+    justify-content: 0;
+}
+
+.container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.card {
+    width: 80px;
+    border-radius: 30px;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.3,0,.99);
+    box-shadow: 0 0 25px rgba(255, 166, 0, 0.514);
+}
+
+.card > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+    background: #223;
+    color: orange;
+    border-radius: 30px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+    color: orange;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px black;
+}
+
+.description p {
+    color: white;
+    padding-top: 5px;
+    text-shadow: 2px 2px 2px black;
+    font-weight: none;
+}
+
+.description h4 {
+    text-transform: uppercase;
+}
+
+input[name="slide"] {
+    display: none;
+}
+
+input[name="slide"]:checked + label {
+    width: 600px;
+}
+
+input[name="slide"]:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card[for="c1"] {
+    background-image: url('./images/gragas.jpg');
+}
+
+.card[for="c2"] {
+    background-image: url('./images/foto3.jpg');
+}
+
+.card[for="c3"] {
+    background-image: url('./images/foto2.jpg');
+}
+
+/* FIM CARD */
